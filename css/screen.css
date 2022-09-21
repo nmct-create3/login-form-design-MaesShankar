@@ -2,11 +2,40 @@
 #FONTS
 \*------------------------------------*/
 
+@font-face {
+    font-family: 'Inter Web';
+    font-weight: 400;
+    src: url('../fonts/Inter-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter Web';
+    font-weight: 700;
+    src: url('../fonts/Inter-Bold.woff2') format('woff2');
+}
 /*------------------------------------*\
 #Variables
 \*------------------------------------*/
 
-:root {}
+:root {
+    accent-color: #3385FF;
+    --global-color-alpha-light: #4F95FF;
+    --global-color-alpha: #3385FF;
+    --global-color-alpha-dark: #2E77E6;
+    --global-color-transparent: #3385FF;
+    --global-color-x-transparent: #3385FF;
+    --global-color-neutral-xxxx-light: #CACCD4;
+    --global-color-neutral-xxx-light: #B5B6C0; 
+    --global-color-neutral-xx-light: #A0A1AD;
+    --global-color-neutral-x-light: #8B8C9A;
+    --global-color-neutral-light: #757787;
+    --global-color-neutral: #606274;
+    --global-color-neutral-dark: #4B4C60;
+    --global-color-neutral-x-dark: #35374D;
+    --global-color-neutral-xx-dark: #20223A;
+    --global-color-neutral-xxx-dark: #131427;
+    --global-color-neutral-xxxx-dark: #000000;
+}
 
 /* CSS variables here */
 
@@ -24,11 +53,11 @@ html {
     font-size: 16px;
     line-height: 1.5;
     font-family: Helvetica, arial, sans-serif;
-    color: grey;
+    color: var(--global-color-neutral-xx-dark);
+    background-color: #F5F6FA ;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
 }
 
 *,
@@ -45,13 +74,13 @@ html {
 */
 
 ::-moz-selection {
-    background: HotPink;
+    background: var(--global-color-transparent);
     color: white;
     text-shadow: none;
 }
 
 ::selection {
-    background: HotPink;
+    background: var(--global-color-transparent);
     color: white;
     text-shadow: none;
 }
@@ -151,23 +180,23 @@ figcaption {
 hr {
     border: 0;
     height: 1px;
-    background: LightGrey;
+    background: var(--global-color-neutral-xxx-light);
     margin: 0 0 24px;
 }
 
 a {
-    color: HotPink;
+    color: var(--global-color-alpha);
     transition: all .1s ease-in-out;
 }
 
 a:visited,
 a:active {
-    color: HotPink;
+    color: var(--global-color-alpha); ;
 }
 
 a:hover,
 a:focus {
-    color: DeepPink;
+     color: var(--global-color-alpha-light);
 }
 
 /*------------------------------------*\
@@ -187,6 +216,10 @@ a:focus {
 
 .o-row--login {
     /* stuff here to align the card */
+  width: auto;
+  display: flex;
+  justify-content:center;
+  align-items: center;
 }
 
 /* size modifiers */
@@ -437,22 +470,83 @@ a:focus {
     ---
     Card with box shadow
 */
+.c-card{
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    box-shadow: var(--global-color-neutral-xxxx-dark);
+}
+.c-card__body{
+    padding: 35px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.c-card__title{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding-top: 35px;
+}
+.c-card__footer{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    border-top: 0.1px solid #E2E3E7;
+    padding-bottom: 10px;
+    padding-top: 30px;
+}
+.c-forgot{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
 
+.c-forgot_size{
+    color: #757787;
+    font-size: 14px;
+}
 /*
     Component: Forms
     ---
     Everything form related here
 */
-
+.c-form-field{
+    display: flex;
+    flex-direction: column;
+}
+.c-form-field__option{
+    display: inline-block;
+}
 /*
     Component: Input
     ---
     Class to put on all input="text" like form inputs
 */
 
-.c-input {}
+.c-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
 
-.c-input:focus {}
+    border-width: 1px;
+    border-style: solid;
+    border-color: #E2E3E7;
+    /* of shorthand 
+    border: 1px solid #E2E3E7;
+    */
+    border-radius: 3px;
+    font-style: inherit; /* Zo erven we de font over van de html*/
+    color: inherit; /*Zo erven we ook de text kleur*/
+    font-size: 16px;
+    line-height: 24px;
+    padding: 11px;
+    outline: none;
+}
+
+.c-input:focus {
+    box-shadow: h-offset v-offset blur spread color;
+    box-shadow: 0 0 0 3px #3385ff4d; 
+}
 
 /*
     Component: Label
@@ -460,8 +554,16 @@ a:focus {
     Class to put on all form labels
 */
 
-.c-label {}
-
+.c-label {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 8px;
+    color:#606274;
+}
+.c-label__option{
+    margin-bottom: none;
+    margin-left: 8px;
+}
 /* If a input is focused within the form-field class change te color of the label */
 
 .c-form-field:focus-within .c-label {}
@@ -472,15 +574,51 @@ a:focus {
     Class to put on form buttons or links
 */
 
-.c-button {}
+.c-button {
+    line-height: 48px;
+    width: 100%;
+    font-size: 20px;
+    color:#FFFFFF ;
+    background-color: var(--global-color-transparent);
+    border-color: var(--global-color-alpha-dark);
+    border-radius: 3px;
+}
 
-.c-button:hover {}
+.c-button:hover {
+    box-shadow: h-offset v-offset blur spread color;
+    box-shadow: 0 0 0 3px #3385ff4d; 
+}
 
-.c-button:focus {}
+.c-button:focus {
+    box-shadow: h-offset v-offset blur spread color;
+    box-shadow: 0 0 0 3px #3385ff4d; 
+}
 
-.c-button:active {}
+.c-button:active {
+    box-shadow: h-offset v-offset blur spread color;
+    box-shadow: 0 0 0 3px #3385ff4d; 
+}
 
 .c-button--block {}
+
+.c-logo{
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.c-logo__symbol{
+    height: 100%;
+}
+.c-logo__path--1 {
+    fill:#20223A;
+}
+.c-logo__path--2 {
+    fill:#3385FF;
+}
+.c-logo__path--3 { 
+    fill: #1B4186;
+}
 
 /*------------------------------------*\
 #UTILITIES

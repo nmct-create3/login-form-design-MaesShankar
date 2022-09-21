@@ -35,7 +35,16 @@
     --global-color-neutral-xx-dark: #20223A;
     --global-color-neutral-xxx-dark: #131427;
     --global-color-neutral-xxxx-dark: #000000;
-}
+
+    --global-baseline: 8px; 
+    --global-whitespace: calc(var(--global-baseline) * 3); /* = 24px */
+    --global-whitespace-xs: calc(var(--global-whitespace) / 2; /* = 4px */
+    --global-whitespace-sm: calc(var(--global-whitespace-xs) * 2; /* = 8px */
+    --global-whitespace-md: calc(var(--global-whitespace-sm) * 2; /* = 16px */
+    --global-whitespace-lg: calc(var(--global-whitespace-md) * 2; /* = 32px */     
+    --global-whitespace-xl: calc(var(--global-whitespace) * 2); /* = 48px */
+    --global-whitespace-xxl: calc(var(--global-whitespace-xl) * 2; /* = 96px */  
+}   
 
 /* CSS variables here */
 
@@ -225,26 +234,26 @@ a:focus {
 /* size modifiers */
 
 .o-row--lg {
-    padding-top: 48px;
-    padding-bottom: 24px;
+    padding-top:  var(--global-whitespace);
+    padding-bottom:  var(--global-whitespace);
 }
 
 .o-row--xl {
-    padding-top: 72px;
-    padding-bottom: 48px;
+    padding-top:  var(--global-whitespace);
+    padding-bottom:  var(--global-whitespace);
 }
 
 @media (min-width: 768px) {
     .o-row {
-        padding-left: 48px;
-        padding-right: 48px;
+        padding-left:  var(--global-whitespace);
+        padding-right:  var(--global-whitespace);
     }
 }
 
 @media (min-width: 992px) {
     .o-row--xl {
-        padding-top: 96px;
-        padding-bottom: 72px;
+        padding-top:  var(--global-whitespace);
+        padding-bottom:  var(--global-whitespace);
     }
 }
 
@@ -476,23 +485,23 @@ a:focus {
     box-shadow: var(--global-color-neutral-xxxx-dark);
 }
 .c-card__body{
-    padding: 35px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding:  var(--global-whitespace);
+    padding-top:  var(--global-whitespace);
+    padding-bottom:  var(--global-whitespace);
 }
 .c-card__title{
     display: flex;
     align-content: center;
     justify-content: center;
-    padding-top: 35px;
+    padding-top:  var(--global-whitespace);
 }
 .c-card__footer{
     display: flex;
     align-content: center;
     justify-content: center;
     border-top: 0.1px solid #E2E3E7;
-    padding-bottom: 10px;
-    padding-top: 30px;
+    padding-bottom:  none;
+    padding-top:  var(--global-whitespace);
 }
 .c-forgot{
     display: flex;
@@ -539,7 +548,7 @@ a:focus {
     color: inherit; /*Zo erven we ook de text kleur*/
     font-size: 16px;
     line-height: 24px;
-    padding: 11px;
+    padding:  var(--global-whitespace);
     outline: none;
 }
 
@@ -561,8 +570,8 @@ a:focus {
     color:#606274;
 }
 .c-label__option{
-    margin-bottom: none;
-    margin-left: 8px;
+    margin-bottom:  var(--global-whitespace);
+    margin-left:  var(--global-whitespace);
 }
 /* If a input is focused within the form-field class change te color of the label */
 

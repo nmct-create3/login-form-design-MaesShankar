@@ -3,15 +3,15 @@
 \*------------------------------------*/
 
 @font-face {
-    font-family: 'Inter Web';
+    font-family: "Inter Web";
     font-weight: 400;
     src: url('../fonts/Inter-Regular.woff2') format('woff2');
 }
 
 @font-face {
-    font-family: 'Inter Web';
+    font-family: "Inter Web";
     font-weight: 700;
-    src: url('../fonts/Inter-Bold.woff2') format('woff2');
+    src: url('../fonts/Inter-SemiBold.woff2') format('woff2');
 }
 /*------------------------------------*\
 #Variables
@@ -60,8 +60,8 @@
 
 html {
     font-size: 16px;
+    font-family: "Inter Web",Arial, Helvetica, sans-serif;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
     color: var(--global-color-neutral-xx-dark);
     background-color: #F5F6FA ;
     box-sizing: border-box;

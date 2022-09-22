@@ -556,6 +556,8 @@ a:focus {
     border-color: #3385ff;
     box-shadow: h-offset v-offset blur spread color;
     box-shadow: 0 0 0 3px #3385ff4d; 
+    /* gebruik RGB notatie 
+        rgba(51,133,255,.3)*/
 }
 
 /*

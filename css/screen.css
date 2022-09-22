@@ -548,7 +548,7 @@ a:focus {
     color: inherit; /*Zo erven we ook de text kleur*/
     font-size: 16px;
     line-height: 24px;
-    padding:  var(--global-baseline);
+    padding:  11px var(--global-baseline);
     outline: none;
 }
 

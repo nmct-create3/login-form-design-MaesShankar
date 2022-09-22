@@ -38,12 +38,12 @@
 
     --global-baseline: 8px; 
     --global-whitespace: calc(var(--global-baseline) * 3); /* = 24px */
-    --global-whitespace-xs: calc(var(--global-whitespace) / 2; /* = 4px */
-    --global-whitespace-sm: calc(var(--global-whitespace-xs) * 2; /* = 8px */
-    --global-whitespace-md: calc(var(--global-whitespace-sm) * 2; /* = 16px */
-    --global-whitespace-lg: calc(var(--global-whitespace-md) * 2; /* = 32px */     
+    --global-whitespace-xs: calc(var(--global-whitespace) / 2); /* = 4px */
+    --global-whitespace-sm: calc(var(--global-whitespace-xs) * 2); /* = 8px */
+    --global-whitespace-md: calc(var(--global-whitespace-sm) * 2); /* = 16px */
+    --global-whitespace-lg: calc(var(--global-whitespace-md) * 2); /* = 32px */     
     --global-whitespace-xl: calc(var(--global-whitespace) * 2); /* = 48px */
-    --global-whitespace-xxl: calc(var(--global-whitespace-xl) * 2; /* = 96px */  
+    --global-whitespace-xxl: calc(var(--global-whitespace-xl)*2); /* = 96px */  
 }   
 
 /* CSS variables here */
@@ -130,21 +130,21 @@ h1 {
 h2 {
     font-size: 32px;
     line-height: 40px;
-    margin: 0 0 24px;
+    margin: 0 0 var(--global-whitespace);
 }
 
 h3 {
     font-size: 26px;
-    line-height: 32px;
-    margin: 0 0 24px;
+    line-height: var(--global-whitespace-lg);
+    margin: 0 0 var(--global-whitespace);
 }
 
 h4,
 h5,
 h6 {
     font-size: 20px;
-    line-height: 24px;
-    margin: 0 0 24px;
+    line-height: var(--global-whitespace);
+    margin: 0 0 var(--global-whitespace);
 }
 
 p,
@@ -154,12 +154,12 @@ dl,
 table,
 address,
 figure {
-    margin: 0 0 24px;
+    margin: 0 0 var(--global-whitespace);
 }
 
 ul,
 ol {
-    padding-left: 24px;
+    padding-left: var(--global-whitespace);
 }
 
 li ul,
@@ -171,7 +171,7 @@ blockquote {
     font-style: normal;
     font-size: 23px;
     line-height: 32px;
-    margin: 0 0 24px;
+    margin: 0 0 var(--global-whitespace);
 }
 
 blockquote * {
@@ -182,15 +182,15 @@ blockquote * {
 figcaption {
     font-weight: 400;
     font-size: 12px;
-    line-height: 16px;
-    margin-top: 8px;
+    line-height: var(--global-whitespace-md);
+    margin-top: var(--global-baseline);
 }
 
 hr {
     border: 0;
     height: 1px;
     background: var(--global-color-neutral-xxx-light);
-    margin: 0 0 24px;
+    margin: 0 0 var(--global-whitespace);
 }
 
 a {
@@ -220,7 +220,7 @@ a:focus {
 
 .o-row {
     position: relative;
-    padding: 24px 24px 0;
+    padding: var(--global-whitespace) var(--global-whitespace) 0;
 }
 
 .o-row--login {
@@ -282,14 +282,14 @@ a:focus {
 }
 
 .o-section+.o-section {
-    padding-top: 24px;
+    padding-top: var(--global-whitespace);
 }
 
 @media (min-width: 768px) {
 
     .o-section--lg+.o-section--lg,
     .o-section--xl+.o-section--xl {
-        padding-top: 48px;
+        padding-top: var(--global-whitespace-xl);
     }
 }
 
@@ -341,7 +341,7 @@ a:focus {
 }
 
 .o-layout--gutter-lg>.o-layout__item {
-    padding: 0 24px;
+    padding: 0 var(--global-whitespace);
 }
 
 .o-layout--gutter-xl {
@@ -349,7 +349,7 @@ a:focus {
 }
 
 .o-layout--gutter-xl>.o-layout__item {
-    padding: 0 48px;
+    padding: 0 var(--global-whitespace-xl);
 }
 
 /* reverse horizontal row modifier */
@@ -548,7 +548,7 @@ a:focus {
     color: inherit; /*Zo erven we ook de text kleur*/
     font-size: 16px;
     line-height: 24px;
-    padding:  var(--global-whitespace);
+    padding:  var(--global-baseline);
     outline: none;
 }
 
@@ -571,7 +571,7 @@ a:focus {
 }
 .c-label__option{
     margin-bottom:  var(--global-whitespace);
-    margin-left:  var(--global-whitespace);
+    /* margin-left:  var(--global-whitespace); */
 }
 /* If a input is focused within the form-field class change te color of the label */
 
